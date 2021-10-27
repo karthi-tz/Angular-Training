@@ -1,0 +1,12 @@
+<h4>Using {{ 'String interpolation' }} on Server {{ serverId }} with name SK</h4>
+<!--<label for="sname">Server name : </label>-->
+<!--<input id="sname" type="text" class="form-control" (input)="onUpdateServer($event)" />-->
+<h1 [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{online: serverStatus === 'online'}">Server status : {{ serverStatus }}</h1>
+<label for="sname">Server name : </label>
+<input id="sname" type="text" class="form-control" [(ngModel)]="serverName" />
+
+<p *ngIf="serverCreated; else noServer">Server name is {{ serverName }}</p>
+<ng-template #noServer><p>No server created</p></ng-template>
+<button class="btn btn-dark" [disabled]="!disableBut" (click)="onCreateServer()">Click me!</button>
+<!--<h6 [innerText]="disableBut"></h6>-->
+<h3>{{ serverCreated }}</h3>

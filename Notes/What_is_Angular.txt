@@ -1,0 +1,27 @@
+Angular :
+
+	* It is a JavaScript framework for building Reactive Single page applications.	
+
+	* Like React, everything is built as a Component in Angular.
+
+	* DOM is manipulated every time and the components changes accordingly to the user's interaction.
+
+	* It makes feel like using Mobile app while using the web developed with Angular, since it is faster.
+
+
+Typescript :
+
+	* Superset of JS, with class, interface types, etc.
+
+	* compiled to js.
+
+
+Components :
+
+	* Building blocks of Angular app
+
+	* Basically a directive with template,
+
+Directives :
+
+	* Instructions to the DOM,

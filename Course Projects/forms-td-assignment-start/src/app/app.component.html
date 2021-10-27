@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <!-- Add a Form with the following Inputs (and Validators)
+           1) Mail address (should not be empty and should be an email address)
+           2) A Dropdown which allows the user to select from three different Subscriptions ("Basic", "Advanced", "Pro")
+              Set "Advanced" as Default
+           3) A Password field (should not be empty)
+           4) A Submit Button
+
+           Display a warning message if the Form is invalid AND was touched. Display a warning message below each input if it's invalid.
+
+           Upon submitting the form, you should simply print the Value of the Form to the Console.
+           Optionally, display it in your template.
+      -->
+
+      <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+        <div class="form-group">
+          <label for="email">Email : </label>
+          <input id="email" type="email" name="email" class="form-control" ngModel #email="ngModel" email required>
+          <span class="help-block" *ngIf="email.invalid && email.touched">Please provide a valid email!</span>
+        </div>
+        <div class="form-group">
+          <label for="subscription">Subscription : </label>
+          <select id="subscription" class="form-control" name="subscription" ngModel [ngModel]="defaultSubs">
+            <option value="basic">Basic</option>
+            <option value="advanced">Advanced</option>
+            <option value="pro">Pro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="password">Password : </label>
+          <input id="password" type="password" name="password" class="form-control" ngModel #password="ngModel" required>
+          <span class="help-block" *ngIf="password.touched && password.invalid">Please provide password!</span>
+        </div>
+        <button type="submit" class="btn btn-danger" [disabled]="myForm.invalid">Submit</button>
+      </form>
+      <hr>
+      <div class="row" *ngIf="submitted">
+        <div class="col-xs-12">
+          <h4>Your data :</h4>
+          <p>Email : {{ data.mail }}</p>
+          <p>Subscription : {{ data.subs | titlecase }}</p>
+          <p>Password : {{ data.password }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

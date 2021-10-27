@@ -1,0 +1,20 @@
+<div class="container-fluid">
+<!--  <app-cockpit (screated)="onServerAdded($event)" (blueprintCreated)="onBlueprintAdded($event)"></app-cockpit>-->
+<!--  <hr>-->
+<!--  <div class="row">-->
+<!--    <div class="col-xs-12">-->
+<!--      <button class="btn btn-info" (click)="onChangeFirst()">Change here</button>-->
+<!--      <button class="btn btn-danger" (click)="onDestroyFirst()">Destroy here</button>-->
+<!--      <app-server-element *ngFor="let serverElement of serverElements" [srvElement]="serverElement" [name]="serverElement.name">-->
+<!--        <p #contentParagraph>-->
+<!--          <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>-->
+<!--          <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>-->
+<!--        </p>-->
+<!--      </app-server-element>-->
+<!--    </div>-->
+<!--  </div>-->
+  <app-game-control (gameStarted)="onStarted($event)"></app-game-control>
+  <hr>
+  <app-odd *ngFor="let oddValue of oddCounter" [myOdd]="oddValue"></app-odd>
+  <app-even *ngFor="let evenValue of evenCounter" [myEven]="evenValue"></app-even>
+</div>

@@ -1,0 +1,15 @@
+<app-sample></app-sample>
+<button class="btn btn-warning" [disabled]="!newServer">
+  Add server!
+</button>
+<hr>
+<!--<label for="server">Server : </label>-->
+<!--<input type="text" id="server" (input)="updateServerName($event)">-->
+
+<label for="server2">Server : </label>
+<input type="text" id="server2" [(ngModel)]="serverName">
+
+<p [innerText]="newServer"></p>
+<h2>{{ 'Hii!!' }} This is server {{ serverId }} & name {{ serverName }} & type {{ getServerType() }}</h2>
+<!--<div app-sample></div>-->
+<!--<div class="app-sample"></div>-->

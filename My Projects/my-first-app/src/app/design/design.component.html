@@ -1,0 +1,22 @@
+<div class="container">
+  <label>Name : </label>
+  <input type="text" [(ngModel)]="username">
+  <br><br>
+  <p>{{ 'Your name is : ' + username }}</p>
+  <br><br>
+  <button class="btn btn-danger" [disabled]="checkName()" (click)="username = ''">Reset</button>
+</div>
+
+<br><hr><br>
+
+<div class="container">
+  <button class="btn btn-info" (click)="clickCheck(); showPassword=!showPassword">Display details</button>
+  <p *ngIf="showPassword">Password : {{ password }}</p>
+  <div
+    *ngFor="let value of logArray; let ind = index"
+    [ngStyle]="{backgroundColor: ind >= 4 ? 'blue' : 'transparent'}"
+    [ngClass]="{ 'change': ind >= 4 }">
+    {{ value }}
+    <br>
+  </div>
+</div>
